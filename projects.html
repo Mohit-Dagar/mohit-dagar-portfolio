@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mohit Dagar's projects — AI Roommate, Smart Surveillance CV, Crop Yield ML, UiPath Automation Lab, PyQt AI Dashboard." />
+  <title>Projects — Mohit Dagar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="nav-logo">MD<span>.</span>portfolio</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certificates.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="orb orb-1"></div>
+      <div class="container">
+        <span class="section-label">// my work</span>
+        <h1>Projects</h1>
+        <p>
+          Practical AI systems built with Python, OpenCV, scikit-learn, PyQt, and UiPath —
+          from intelligent surveillance to agri-tech ML and desktop AI dashboards.
+          Building demos, not just notebooks.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Project list">
+      <div class="container">
+
+        <div class="filter-bar reveal" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="ml-ai">ML / AI</button>
+          <button class="filter-btn" data-filter="cv">Computer Vision</button>
+          <button class="filter-btn" data-filter="automation">Automation</button>
+          <button class="filter-btn" data-filter="web">Web / UI</button>
+        </div>
+
+        <div class="grid-3" id="projects-grid">
+
+          <!-- ── 1: AI Roommate ── -->
+          <article class="project-card reveal" data-category="cv">
+            <div class="project-header">
+              <span class="project-icon">🤖</span>
+              <span class="project-status status-progress">In Progress</span>
+            </div>
+            <h3 class="project-title">AI Roommate</h3>
+            <p class="project-desc">
+              A smart desktop assistant for room monitoring, reminders, and home
+              automation. Uses computer vision to stay context-aware of your
+              environment — recognising presence, activity, and events — then
+              acts on them with intelligent reminders and automations.
+            </p>
+            <p class="project-role">Role: <span>Solo Developer — CV integration, PyQt UI, automation logic</span></p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyQt/PySide</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">NumPy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Mohit-Dagar" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">⭐ GitHub</a>
+              <a href="#" class="btn btn-outline btn-sm">Demo (Soon)</a>
+            </div>
+          </article>
+
+          <!-- ── 2: Smart Surveillance CV ── -->
+          <article class="project-card reveal reveal-delay-1" data-category="cv">
+            <div class="project-header">
+              <span class="project-icon">🎥</span>
+              <span class="project-status status-progress">In Progress</span>
+            </div>
+            <h3 class="project-title">Smart Surveillance CV</h3>
+            <p class="project-desc">
+              Real-time home surveillance system with motion detection and
+              event-aware computer vision. Filters false positives intelligently
+              using frame-diff analysis and object context, then fires alerts only
+              on genuine anomalies — making it practical for actual deployment.
+            </p>
+            <p class="project-role">Role: <span>Solo Developer — CV pipeline, alert system, real-time processing</span></p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">NumPy</span>
+              <span class="tech-tag">SMTP alerts</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Mohit-Dagar" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">⭐ GitHub</a>
+              <a href="#" class="btn btn-outline btn-sm">Demo (Soon)</a>
+            </div>
+          </article>
+
+          <!-- ── 3: Crop Yield ML ── -->
+          <article class="project-card reveal reveal-delay-2" data-category="ml-ai">
+            <div class="project-header">
+              <span class="project-icon">🌾</span>
+              <span class="project-status status-progress">In Progress</span>
+            </div>
+            <h3 class="project-title">Crop Yield ML</h3>
+            <p class="project-desc">
+              ML experiments for crop recommendation and yield estimation in
+              agriculture. Trains regression and classification models on soil
+              NPK values, pH, rainfall, and temperature data. Aims to give
+              smallholder farmers a data-backed forecast before sowing season.
+            </p>
+            <p class="project-role">Role: <span>Solo Developer — EDA, feature engineering, model training &amp; evaluation</span></p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">pandas</span>
+              <span class="tech-tag">scikit-learn</span>
+              <span class="tech-tag">Jupyter</span>
+              <span class="tech-tag">Matplotlib</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Mohit-Dagar/cipherschool" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">⭐ GitHub</a>
+              <a href="#" class="btn btn-outline btn-sm">Notebook (Soon)</a>
+            </div>
+          </article>
+
+          <!-- ── 4: UiPath Automation Lab ── -->
+          <article class="project-card reveal" data-category="automation">
+            <div class="project-header">
+              <span class="project-icon">⚙️</span>
+              <span class="project-status status-completed">Completed</span>
+            </div>
+            <h3 class="project-title">UiPath Automation Lab</h3>
+            <p class="project-desc">
+              A collection of RPA automation workflows built in UiPath Studio for
+              productivity and business process automation. Covers data entry bots,
+              document processing, web scraping sequences, and scheduled
+              report-generation pipelines.
+            </p>
+            <p class="project-role">Role: <span>RPA Developer — workflow design, process mapping, bot testing</span></p>
+            <div class="tech-stack">
+              <span class="tech-tag">UiPath</span>
+              <span class="tech-tag">RPA</span>
+              <span class="tech-tag">Process Design</span>
+              <span class="tech-tag">VBA</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Mohit-Dagar/Finish66" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">⭐ GitHub</a>
+              <a href="#" class="btn btn-outline btn-sm">Docs</a>
+            </div>
+          </article>
+
+          <!-- ── 5: PyQt AI Dashboard ── -->
+          <article class="project-card reveal reveal-delay-1" data-category="ml-ai">
+            <div class="project-header">
+              <span class="project-icon">📊</span>
+              <span class="project-status status-progress">In Progress</span>
+            </div>
+            <h3 class="project-title">PyQt AI Dashboard</h3>
+            <p class="project-desc">
+              A desktop dashboard application for displaying ML model outputs,
+              real-time alerts, and live metrics. Built with PyQt/PySide for a
+              native desktop feel. Connects to local model APIs and renders
+              inference results, confidence scores, and trend charts.
+            </p>
+            <p class="project-role">Role: <span>Solo Developer — UI/UX design, data viz, model integration</span></p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PyQt/PySide</span>
+              <span class="tech-tag">Matplotlib</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Mohit-Dagar" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">⭐ GitHub</a>
+              <a href="#" class="btn btn-outline btn-sm">Demo (Soon)</a>
+            </div>
+          </article>
+
+          <!-- ── 6: Early HTML/CSS Work ── -->
+          <article class="project-card reveal reveal-delay-2" data-category="web">
+            <div class="project-header">
+              <span class="project-icon">🎨</span>
+              <span class="project-status status-completed">Completed</span>
+            </div>
+            <h3 class="project-title">HTML/CSS Learning Series</h3>
+            <p class="project-desc">
+              Early foundation projects from 2022 — teaching grid layouts, flexbox,
+              and combined HTML+CSS techniques through hands-on mini-projects.
+              These repos (grid1.html, grid.html, basic-html-myself-css.html)
+              collectively earned 4 stars and 4 forks on GitHub.
+            </p>
+            <p class="project-role">Role: <span>Author &amp; Educator — built to teach others</span></p>
+            <div class="tech-stack">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">CSS Grid</span>
+              <span class="tech-tag">Flexbox</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Mohit-Dagar/grid1.html" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">⭐ grid1</a>
+              <a href="https://github.com/Mohit-Dagar/basic-html-myself-css.html" target="_blank" rel="noopener" class="btn btn-outline btn-sm">basic-html</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">MD<span>.</span>portfolio</span>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="certificates.html">Certificates</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 Mohit Dagar · Jhajjar, Haryana · Built with vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

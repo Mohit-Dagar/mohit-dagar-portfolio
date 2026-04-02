@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mohit Dagar's certificates — Microsoft AZ-500, C++ Specialization, 24 Coursera courses in GenAI, LLMs, Azure, Algorithms and more." />
+  <title>Certificates — Mohit Dagar</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+  <style>
+    /* ── Page-specific styles ── */
+    .cert-stats {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      padding: 1.5rem 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 3rem;
+    }
+    .cert-stat { display: flex; flex-direction: column; gap: 0.2rem; }
+    .cert-stat-num { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+    .cert-stat-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .year-sep { display: flex; align-items: center; gap: 1rem; margin: 2.5rem 0 1.5rem; }
+    .year-sep span { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.15em; color: var(--text-muted); text-transform: uppercase; white-space: nowrap; }
+    .year-sep::before, .year-sep::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .provider-badge { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 999px; white-space: nowrap; }
+    .badge-microsoft { background: rgba(0,120,212,0.15); color: #60a5fa; border: 1px solid rgba(0,120,212,0.35); }
+    .badge-google    { background: rgba(66,133,244,0.15); color: #93c5fd; border: 1px solid rgba(66,133,244,0.3); }
+    .badge-codio     { background: rgba(236,72,153,0.12); color: #f9a8d4; border: 1px solid rgba(236,72,153,0.3); }
+    .badge-deeplearn { background: rgba(255,165,0,0.12);  color: #fcd34d; border: 1px solid rgba(255,165,0,0.3); }
+    .badge-vanderbilt{ background: rgba(162,28,175,0.12); color: #d8b4fe; border: 1px solid rgba(162,28,175,0.3); }
+    .badge-princeton { background: rgba(255,102,0,0.12);  color: #fdba74; border: 1px solid rgba(255,102,0,0.3); }
+    .badge-ucsd      { background: rgba(0,98,155,0.15);   color: #7dd3fc; border: 1px solid rgba(0,98,155,0.3); }
+    .badge-colorado  { background: rgba(207,184,124,0.12);color: #fde68a; border: 1px solid rgba(207,184,124,0.3); }
+    .badge-linkedin  { background: rgba(10,102,194,0.15); color: #60a5fa; border: 1px solid rgba(10,102,194,0.4); }
+    .badge-lpu       { background: rgba(0,229,255,0.1);   color: var(--accent); border: 1px solid var(--border-accent); }
+    .badge-scrimba   { background: rgba(99,102,241,0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+
+    /* Professional cert — bigger card */
+    .pro-cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .pro-cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+    }
+    .pro-cert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card), 0 0 30px var(--accent-glow);
+    }
+    .pro-cert-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.3);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-family: var(--font-mono); font-size: 0.62rem;
+      color: #10b981; letter-spacing: 0.08em; text-transform: uppercase;
+      width: fit-content;
+    }
+    .pro-cert-id {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      color: var(--text-muted); letter-spacing: 0.05em;
+    }
+    .component-list { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.25rem; }
+    .component-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.78rem; color: var(--text-secondary);
+    }
+    .component-item .check { color: #10b981; font-size: 0.8rem; flex-shrink: 0; }
+
+    /* Skills tags */
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag-sm {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      padding: 0.2rem 0.55rem; border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+      color: var(--text-secondary); letter-spacing: 0.03em;
+    }
+
+    /* Course list compact */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.9rem;
+    }
+    .course-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: all var(--transition);
+    }
+    .course-item:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+    .course-item-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+    .course-item-org {
+      font-family: var(--font-mono); font-size: 0.62rem;
+      color: var(--text-muted); letter-spacing: 0.04em;
+    }
+
+    /* In progress bar */
+    .progress-wrap { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 0.2rem; }
+    .progress-label { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); }
+    .progress-bar { height: 3px; background: var(--border); border-radius: 999px; overflow: hidden; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--purple)); border-radius: 999px; width: 0; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+
+    /* Learning banner */
+    .learning-banner {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem; margin-top: 3rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .learning-banner h3 { font-size: 1rem; color: var(--text-primary); }
+    .learning-banner p { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.6; }
+    .learning-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
+    .learning-tag { font-family: var(--font-mono); font-size: 0.65rem; padding: 0.25rem 0.65rem; border-radius: 999px; background: var(--purple-dim); border: 1px solid rgba(124,58,237,0.3); color: #a78bfa; letter-spacing: 0.05em; }
+
+    /* LPU program card */
+    .lpu-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: all var(--transition);
+    }
+    .lpu-card:hover { border-color: var(--border-accent); transform: translateY(-3px); }
+    .lpu-card-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+    .lpu-card-code { font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.08em; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="index.html" class="nav-logo">MD<span>.</span>portfolio</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="certificates.html">Certificates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ─── PAGE HERO ─── -->
+    <section class="page-hero">
+      <div class="orb orb-1"></div>
+      <div class="container">
+        <span class="section-label">// credentials</span>
+        <h1>Certificates</h1>
+        <p>
+          2 professional certifications, 24 completed Coursera courses, and 13 in progress —
+          spanning Azure Security, Generative AI, LLMs, Algorithms, C++, Google Cloud,
+          and Project Management.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Certificates">
+      <div class="container">
+
+        <!-- ── Stats bar ── -->
+        <div class="cert-stats reveal">
+          <div class="cert-stat">
+            <span class="cert-stat-num">2</span>
+            <span class="cert-stat-label">Pro Certificates</span>
+          </div>
+          <div class="cert-stat">
+            <span class="cert-stat-num">24</span>
+            <span class="cert-stat-label">Courses Completed</span>
+          </div>
+          <div class="cert-stat">
+            <span class="cert-stat-num">13</span>
+            <span class="cert-stat-label">In Progress</span>
+          </div>
+          <div class="cert-stat">
+            <span class="cert-stat-num">7+</span>
+            <span class="cert-stat-label">Platforms / Orgs</span>
+          </div>
+          <div class="cert-stat">
+            <span class="cert-stat-num">3</span>
+            <span class="cert-stat-label">Learning Sources</span>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════
+             PROFESSIONAL CERTIFICATES
+        ════════════════════════════════ -->
+        <div class="year-sep reveal"><span>Professional Certificates — Completed</span></div>
+
+        <div class="grid-2">
+
+          <!-- AZ-500 -->
+          <article class="pro-cert-card reveal">
+            <div>
+              <div class="pro-cert-badge">✅ Professional Certificate Earned</div>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:1rem;">
+              <span style="font-size:2rem; flex-shrink:0;">🛡️</span>
+              <div>
+                <h3 class="cert-title" style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-primary);line-height:1.3;">
+                  Microsoft Azure Security Engineer Associate
+                </h3>
+                <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);margin-top:0.2rem;">AZ-500 Certification</div>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+                  <span class="provider-badge badge-microsoft">Microsoft</span>
+                  <span class="provider-badge badge-lpu">Via Coursera</span>
+                </div>
+              </div>
+            </div>
+
+            <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.6;">
+              All 7 courses completed with distinction. Covers Azure identity management,
+              platform protection, application security, data security at rest,
+              and security operations — with a full capstone and AZ-500 practice exam.
+            </p>
+
+            <div class="component-list">
+              <div class="component-item"><span class="check">✓</span> Secure Access with Azure Active Directory</div>
+              <div class="component-item"><span class="check">✓</span> Identity Protection and Governance</div>
+              <div class="component-item"><span class="check">✓</span> Implement Platform Protection</div>
+              <div class="component-item"><span class="check">✓</span> Secure Your Applications</div>
+              <div class="component-item"><span class="check">✓</span> Secure Your Data at Rest</div>
+              <div class="component-item"><span class="check">✓</span> Manage Security Operations</div>
+              <div class="component-item"><span class="check">✓</span> Capstone and Practice Exam (AZ-500)</div>
+            </div>
+
+            <div class="skill-tags">
+              <span class="skill-tag-sm">Azure Security</span>
+              <span class="skill-tag-sm">Identity Management</span>
+              <span class="skill-tag-sm">Data Protection</span>
+              <span class="skill-tag-sm">Security Operations</span>
+              <span class="skill-tag-sm">Compliance</span>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+              <span class="pro-cert-id">Certificate ID: OU5TRM53D7G8</span>
+              <a href="https://www.coursera.org/account/accomplishments/professional-cert/OU5TRM53D7G8"
+                 target="_blank" rel="noopener" class="btn btn-outline btn-sm">View Credential ↗</a>
+            </div>
+          </article>
+
+          <!-- C++ Specialization -->
+          <article class="pro-cert-card reveal reveal-delay-1">
+            <div>
+              <div class="pro-cert-badge">✅ Specialization Certificate Earned</div>
+            </div>
+            <div style="display:flex; align-items:flex-start; gap:1rem;">
+              <span style="font-size:2rem; flex-shrink:0;">⚡</span>
+              <div>
+                <h3 class="cert-title" style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-primary);line-height:1.3;">
+                  Programming in C++: A Hands-on Introduction
+                </h3>
+                <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);margin-top:0.2rem;">4-Course Specialization</div>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+                  <span class="provider-badge badge-codio">Codio</span>
+                  <span class="provider-badge badge-lpu">Via Coursera</span>
+                </div>
+              </div>
+            </div>
+
+            <p style="font-size:0.83rem;color:var(--text-secondary);line-height:1.6;">
+              Full 4-course hands-on C++ specialization covering core programming,
+              data structures, object-oriented design with inheritance, encapsulation,
+              and recursion — from basics to production-quality OOP patterns.
+            </p>
+
+            <div class="component-list">
+              <div class="component-item"><span class="check">✓</span> C++ Basics: Selection and Iteration</div>
+              <div class="component-item"><span class="check">✓</span> C++ Basic Structures: Vectors, Pointers, Strings, and Files</div>
+              <div class="component-item"><span class="check">✓</span> C++ Object Basics: Functions, Recursion, and Objects</div>
+              <div class="component-item"><span class="check">✓</span> Object-Oriented C++: Inheritance and Encapsulation</div>
+            </div>
+
+            <div class="skill-tags">
+              <span class="skill-tag-sm">C++ Programming</span>
+              <span class="skill-tag-sm">OOP</span>
+              <span class="skill-tag-sm">Data Structures</span>
+              <span class="skill-tag-sm">Recursion</span>
+              <span class="skill-tag-sm">Encapsulation</span>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+              <span class="pro-cert-id">Certificate ID: 4JTK3W5GHWEN</span>
+              <a href="https://www.coursera.org/account/accomplishments/specialization/4JTK3W5GHWEN"
+                 target="_blank" rel="noopener" class="btn btn-outline btn-sm">View Credential ↗</a>
+            </div>
+          </article>
+
+        </div><!-- /pro certs grid -->
+
+
+        <!-- ════════════════════════════════
+             IN PROGRESS
+        ════════════════════════════════ -->
+        <div class="year-sep reveal"><span>🔄 In Progress — 2025 / 2026</span></div>
+
+        <!-- Microsoft AI & ML Specialization -->
+        <div class="reveal" style="margin-bottom:2rem;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.75rem;margin-bottom:1.25rem;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+              <div>
+                <span class="section-label" style="margin-bottom:0.3rem;">5-Course Specialization</span>
+                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text-primary);">
+                  Microsoft AI & ML Engineering Specialization
+                </h3>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+                  <span class="provider-badge badge-microsoft">Microsoft</span>
+                  <span class="provider-badge badge-lpu">Via Coursera</span>
+                </div>
+              </div>
+              <span class="project-status status-progress" style="white-space:nowrap;">In Progress</span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem;">
+
+              <div class="course-item" style="border-color:rgba(16,185,129,0.3);">
+                <div class="course-item-title">1. Foundations of AI and Machine Learning</div>
+                <div class="course-item-org">Microsoft · Course 1 of 5</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>98%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="98%" style="background:#10b981;"></div></div>
+                </div>
+              </div>
+
+              <div class="course-item">
+                <div class="course-item-title">2. AI and Machine Learning Algorithms and Techniques</div>
+                <div class="course-item-org">Microsoft · Course 2 of 5</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>2%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="2%"></div></div>
+                </div>
+              </div>
+
+              <div class="course-item">
+                <div class="course-item-title">3. Building Intelligent Troubleshooting Agents</div>
+                <div class="course-item-org">Microsoft · Course 3 of 5</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>2%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="2%"></div></div>
+                </div>
+              </div>
+
+              <div class="course-item">
+                <div class="course-item-title">4. Microsoft Azure for AI and Machine Learning</div>
+                <div class="course-item-org">Microsoft · Course 4 of 5</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>4%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="4%"></div></div>
+                </div>
+              </div>
+
+              <div class="course-item">
+                <div class="course-item-title">5. Advanced AI and Machine Learning Techniques and Capstone</div>
+                <div class="course-item-org">Microsoft · Course 5 of 5</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>3%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="3%"></div></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- LPU Programs In Progress -->
+        <div class="reveal" style="margin-bottom:2rem;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:1.75rem;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+              <div>
+                <span class="section-label" style="margin-bottom:0.3rem;">LPU Credit Program</span>
+                <h3 style="font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text-primary);">
+                  D-CSEB422 :: Project Management
+                </h3>
+                <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem;">
+                  <span class="provider-badge badge-lpu">LPU</span>
+                  <span class="provider-badge badge-colorado">Univ. of Colorado Boulder</span>
+                </div>
+              </div>
+              <span class="project-status status-progress">Ongoing</span>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1.25rem;">
+              <div class="course-item">
+                <div class="course-item-title">Project Management: Foundations and Initiation</div>
+                <div class="course-item-org">University of Colorado Boulder</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>68%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="68%"></div></div>
+                </div>
+              </div>
+              <div class="course-item">
+                <div class="course-item-title">Project Planning and Execution</div>
+                <div class="course-item-org">University of Colorado Boulder</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>2%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="2%"></div></div>
+                </div>
+              </div>
+              <div class="course-item">
+                <div class="course-item-title">Agile Project Management</div>
+                <div class="course-item-org">University of Colorado Boulder</div>
+                <div class="progress-wrap">
+                  <div class="progress-label"><span>Progress</span><span>2%</span></div>
+                  <div class="progress-bar"><div class="progress-fill" data-width="2%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LPU D-CSEB430 Pending -->
+        <div class="grid-2 reveal" style="margin-bottom:2rem;">
+          <div class="lpu-card">
+            <span class="lpu-card-code">D-CSEB430 · LPU × Microsoft · Enrollment Pending</span>
+            <div class="lpu-card-title">Building Intelligent Agents with Azure AI</div>
+            <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;">
+              5-course Microsoft program covering Azure AI, ML algorithms, intelligent agent
+              building, and an advanced capstone — pending LPU enrollment.
+            </p>
+            <span class="project-status status-planned" style="width:fit-content;">Planned</span>
+          </div>
+
+          <div class="lpu-card">
+            <span class="lpu-card-code">LPU · Reliance Family · Available</span>
+            <div class="lpu-card-title">NextGen Career & Placement Readiness</div>
+            <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;">
+              Career readiness program available through LPU and Reliance Family Coursera
+              access. Covers interview prep, placement strategy, and professional skills.
+            </p>
+            <span class="project-status status-planned" style="width:fit-content;">Available</span>
+          </div>
+        </div>
+
+
+        <!-- ════════════════════════════════
+             COMPLETED INDIVIDUAL COURSES
+        ════════════════════════════════ -->
+        <div class="year-sep reveal"><span>✅ 24 Completed Individual Courses</span></div>
+
+        <!-- GenAI / LLM Group -->
+        <div class="reveal" style="margin-bottom:2rem;">
+          <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">
+            🤖 Generative AI & Large Language Models
+          </p>
+          <div class="course-grid">
+            <div class="course-item">
+              <div class="course-item-title">Generative AI with Large Language Models</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-deeplearn" style="font-size:0.58rem;padding:0.15rem 0.45rem;">DeepLearning.AI</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Generative AI for Everyone</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-deeplearn" style="font-size:0.58rem;padding:0.15rem 0.45rem;">DeepLearning.AI</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Introduction to Large Language Models</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-google" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Google Cloud</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Introduction to Generative AI</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-google" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Google Cloud</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Innovating with Google Cloud Artificial Intelligence</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-google" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Google Cloud</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Generative AI Primer</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-vanderbilt" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Vanderbilt Univ.</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">GenAI for Everyone</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge" style="background:rgba(99,102,241,0.12);color:#a5b4fc;border:1px solid rgba(99,102,241,0.3);font-size:0.58rem;padding:0.15rem 0.45rem;">Fractal Analytics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ChatGPT / Prompt Group -->
+        <div class="reveal" style="margin-bottom:2rem;">
+          <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">
+            💬 ChatGPT & Prompt Engineering
+          </p>
+          <div class="course-grid">
+            <div class="course-item">
+              <div class="course-item-title">Prompt Engineering for ChatGPT</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-vanderbilt" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Vanderbilt Univ.</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">ChatGPT Advanced Data Analysis</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-vanderbilt" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Vanderbilt Univ.</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">ChatGPT Playground for Beginners: Intro to NLP AI</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge" style="background:rgba(0,119,181,0.12);color:#93c5fd;border:1px solid rgba(0,119,181,0.3);font-size:0.58rem;padding:0.15rem 0.45rem;">Coursera</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">ChatGPT for Beginners: Save time with Microsoft Excel</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge" style="background:rgba(0,119,181,0.12);color:#93c5fd;border:1px solid rgba(0,119,181,0.3);font-size:0.58rem;padding:0.15rem 0.45rem;">Coursera</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Build AI Apps with ChatGPT, Dall-E, and GPT-4</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-scrimba" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Scrimba</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Learn to Code with AI</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-scrimba" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Scrimba</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CS / Algorithms Group -->
+        <div class="reveal" style="margin-bottom:2rem;">
+          <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">
+            📐 Algorithms, CS & Math
+          </p>
+          <div class="course-grid">
+            <div class="course-item">
+              <div class="course-item-title">Analysis of Algorithms</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-princeton" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Princeton Univ.</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Dynamic Programming, Greedy Algorithms</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-colorado" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Univ. of Colorado</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Approximation Algorithms and Linear Programming</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-colorado" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Univ. of Colorado</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Algorithms on Strings</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-ucsd" style="font-size:0.58rem;padding:0.15rem 0.45rem;">UC San Diego</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Mastering Programming with MATLAB</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-vanderbilt" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Vanderbilt Univ.</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">The Bits and Bytes of Computer Networking</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-google" style="font-size:0.58rem;padding:0.15rem 0.45rem;">Google</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">Static Routing Configuration Using Packet Tracer</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge" style="background:rgba(255,255,255,0.05);color:var(--text-muted);border:1px solid var(--border);font-size:0.58rem;padding:0.15rem 0.45rem;">Guided Project</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foundation / LinkedIn Learning -->
+        <div class="reveal" style="margin-bottom:1rem;">
+          <p style="font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">
+            🌐 Web Foundation — LinkedIn Learning (Feb 2023)
+          </p>
+          <div class="course-grid">
+            <div class="course-item">
+              <div class="course-item-title">Explore a Career in Front-End Web Development</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-linkedin" style="font-size:0.58rem;padding:0.15rem 0.45rem;">LinkedIn Learning</span>
+              </div>
+            </div>
+            <div class="course-item">
+              <div class="course-item-title">HTML Essential Training</div>
+              <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.2rem;">
+                <span class="provider-badge badge-linkedin" style="font-size:0.58rem;padding:0.15rem 0.45rem;">LinkedIn Learning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Currently Learning banner -->
+        <div class="learning-banner reveal">
+          <h3>🌱 Currently Learning</h3>
+          <p>Alongside the in-progress courses, actively building in these areas:</p>
+          <div class="learning-list">
+            <span class="learning-tag">LLM Applications</span>
+            <span class="learning-tag">Azure AI Agents</span>
+            <span class="learning-tag">MLOps & Deployment</span>
+            <span class="learning-tag">Experiment Tracking</span>
+            <span class="learning-tag">PyQt UI/UX</span>
+            <span class="learning-tag">Python DSA</span>
+            <span class="learning-tag">Agile PM</span>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:2.5rem;text-align:center;">
+          <a href="contact.html" class="btn btn-outline">Work With Me →</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">MD<span>.</span>portfolio</span>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 Mohit Dagar · Jhajjar, Haryana · Built with vanilla JS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    /* Animate progress bars on scroll */
+    const progressObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.progress-fill').forEach(fill => {
+            setTimeout(() => { fill.style.width = fill.dataset.width || '0%'; }, 200);
+          });
+          progressObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.course-item, .pro-cert-card').forEach(el => progressObserver.observe(el));
+  </script>
+</body>
+</html>
